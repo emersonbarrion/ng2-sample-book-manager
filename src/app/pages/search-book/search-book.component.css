@@ -1,0 +1,16 @@
+md-card-title,
+md-card-content {
+    display: flex;
+    justify-content: center;
+}
+
+.search-container {
+    margin-top: 10px;
+}
+
+app-book-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+

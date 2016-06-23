@@ -1,0 +1,20 @@
+<md-card class="book-detail">
+  <md-card-title-group>
+    <md-card-title>{{ book.title }}</md-card-title>
+    <img md-card-sm-image *ngIf="book.thumbnail" [src]="book.thumbnail"/>
+  </md-card-title-group>
+  <md-card-content>
+    <p [innerHtml]="book.description"></p>
+  </md-card-content>
+  <md-card-footer>
+    <h5 md-subheader>Written By:</h5>
+    <span>
+      {{ book.authors | addCommas }}
+    </span>
+  </md-card-footer>
+  <md-card-actions align="end">
+    <button md-raised-button color="primary" (click)="addFavorite(book)">
+    Add Book to Collection
+    </button>
+  </md-card-actions>
+</md-card>

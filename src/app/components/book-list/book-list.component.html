@@ -1,0 +1,17 @@
+<md-card *ngFor="let book of books | async">
+  <md-card-title-group>
+    <md-card-title>{{ book.title }}</md-card-title>
+    <img md-card-sm-image *ngIf="book.thumbnail" [src]="book.thumbnail"/>
+  </md-card-title-group>
+  <md-card-content>
+    <p *ngIf="book.description">{{ book.description | ellipsis }}</p>
+  </md-card-content>
+  <md-card-footer>
+    <h5 md-subheader>Written By:</h5>
+    <span>{{ book.authors | addCommas }}</span>
+  </md-card-footer>
+  <button md-raised-button color="warn" (click)="removeFavorite(book)" *ngIf="favorite == true">
+    Remove Book from Collection
+  </button>
+  <button md-raised-button color="primary" (click)="onSelect(book)" *ngIf="favorite == false">Details</button>
+</md-card>
